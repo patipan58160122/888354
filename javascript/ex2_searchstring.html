@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+	<h2>Ex.2 - Search String Non Sensitive Case</h2>
+    <hr>
+    	<div class="form-group">
+			<a>Text Input :</a>
+			<textarea name="txt" id="txt" cols="40" rows="5"></textarea>
+		<br><br>
+        </div>
+        <div class="form-group">
+			<a>Sensitive Case : </a>
+			<input type="radio" name="radio" value="Yes" checked><a>Yes</a>
+			<input type="radio" name="radio" value="No"><a>No</a>
+        </div>
+		<br><br>
+        	<div class="form-group">
+			<a>Search :</a>
+			<input type="text" id="txt2"/>
+		<br><br>
+        </div>
+		<button onclick='functionsearch()'>search</button>
+        <br><br>
+        <p>Result for search : <a id="demo"></a></p>
+</center>
+ <script>
+        function functionsearch(){
+            var txt = document.getElementById('txt').value;
+            var txts = document.getElementById('txt2').value;
+            var check = document.querySelector('input[name="radio"]:checked').value;
+            var sult = "";
+            if(check == 'Yes'){
+                sult = txt.match(new RegExp(txts,'g')).length;
+
+            }else if(check == 'No'){
+                sult = txt.match(new RegExp(txts,'gi')).length;
+            }
+
+            document.getElementById('demo').innerHTML = "Result for Search :" + sult;
+        }
+ </script>
+</body>

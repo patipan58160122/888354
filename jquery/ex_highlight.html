@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/jquery.mark.min.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+  			$("#search").click(function(){
+  				var word1 = $("p").text();
+  				var word2 = $("#searchja").val();
+  				var hilite = new RegExp(word2, "gi");
+  				var word3 = word1.match(hilite);
+  				$("#words").html(word3.length);
+  				if(word3){
+  					$("p").html(word1.replace(hilite,function(match){
+  						return "<span class='highlight'>" + match + "</span>";
+  					}))
+  				}
+  			});
+  		});
+  </script>
+  <style>
+    p#groove {border-style: groove;}
+    .highlight {
+      background-color: yellow;
+      border-radius: .125em;
+            }
+  </style>
+<center>
+	<h2>Ex.2 - Highlight Text</h2>
+  <hr>
+    <div class="form-group">
+			<a>search :</a>
+			  <input type="search" id="searchja">
+		    <br><br>
+    </div>
+		  <button id="search">search</button>
+        <br><br>
+      found : <span id="words">0</span> word
+</center>
+<form>
+<h2>The Article : Continuous Digital Health</h2>
+<p id="groove">The Article : Continuous Digital Health
+The way we deal with our health is undergoing a major transformation, not only because mobile Internet technology has made it possible to have continuous access to personal health information, but also because breaking the trend of ever-growing healthcare costs is increasingly necessary. Estimates indicate that more than 70 percent of the world population will have a smartphone by 2017. Connectivity, interoperability, sensing, and instant feedback through smartphones all provide new opportunities for gaining insights into our health behavior. Such insights are improving, and understanding what motivates people to make healthy changes throughout their lifetimes is becoming more important. Internet technology not only lets us continuously monitor an individual's physiological and psychological state, but also allows for building up a lifelong record of physical, mental, and social health.
+</p>
+</form>

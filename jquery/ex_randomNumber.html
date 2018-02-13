@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+<center>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#button").click(function(){
+        var nu1 = Math.floor((Math.random() * 100) + 1);
+        var nu2 = Math.floor((Math.random() * 100) + 1);
+         $("#test").html(nu1);
+         $("#test2").html(nu2);
+         $("#total").click(function(){
+           var answer = $('#totals').val();
+             if((nu1 + nu2) == answer){
+               $("#answer").html("That's correct");
+               $("#answer").css("color","green");
+             }else{
+               $("#answer").html("That's wrong. The answer is" + (nu1+nu2));
+               $("#answer").css("color","red");
+             }
+         });
+       })
+    });
+</script>
+	<h2>Ex. - Random Number for answer</h2>
+    <hr>
+  <div>
+    <button id="button">Random Number</button>
+    <br><br>
+  </div>
+  <div>
+    <span id="test">?</span> + <span id="test2">?</span> = <input type="text" id="totals">
+  </div>
+    <br>
+    <button id="total">Send answer</button>
+		<br>
+    <span>Result : <a id="answer"></a></span>

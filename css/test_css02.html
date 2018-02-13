@@ -1,0 +1,58 @@
+<!DOCTYPE>
+<html>
+<head>
+<style>
+div#head{
+  perspective: 150px;
+}
+div#sub {
+    width: 300px;
+    height: 100px;
+    background-color: yellow;
+    border: 1px solid black;
+    transform: translate(250px,50px) rotateX(45deg) scale(2, 2)skewX(20deg); /* IE 9 */
+     /* Standard syntax */
+}
+div#tran{
+  width: 100px;
+   height: 100px;
+   background: red;
+   transform: translate(10px,300px);
+   transition: width 2s, opacity 2s ,background 3s;
+}
+div#tran:hover{
+  width: 500px;
+  opacity: 3s;
+  background: blue;
+}
+@keyframes example {
+  0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px; border-radius: 50px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px; border-radius: 50px;}
+    100% {background-color:red; left:0px; top:0px;}
+}
+div#animated{
+  width: 100px;
+   height: 100px;
+   background: pink;
+   position: relative;
+   transform: translate(20px,200px);
+   animation-name: example;
+   animation-duration: 3s;
+   animation-iteration-count: infinite;
+}
+</style>
+<body>
+<div id="head">
+<div id="sub">
+    This div element is moved 50 pixels to the right, and 100 pixels down from its current position.
+</div>
+</div>
+<div id="tran">
+</div>
+<div id="animated">
+
+</div>
+</body>
+</head>
